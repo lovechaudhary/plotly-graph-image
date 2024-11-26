@@ -1,6 +1,6 @@
 {
   "name": "plotly-graph-image",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate plotly graphs via API",
   "main": "index.js",
   "scripts": {
