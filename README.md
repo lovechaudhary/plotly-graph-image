@@ -1,35 +1,36 @@
-# plolty-graph-image
-plotly-graph-image
-plotly-graph-image is a Node.js library that allows you to generate high-quality PNG images from Plotly figures using Puppeteer. You can easily convert Plotly charts to images for embedding in reports, documents, or web pages.
+# plotly-graph-image
 
-Table of Contents
-Installation
-Usage
-Examples
-API Documentation
-Contributing
-License
-Acknowledgements
-Support
-Installation
-You can install plotly-graph-image via npm or yarn.
+**plotly-graph-image** is a Node.js library that allows you to generate high-quality PNG images from Plotly figures using Puppeteer. You can easily convert Plotly charts to images for embedding in reports, documents, or web pages.
 
-Using npm:
-bash
-Copy code
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#basic-example)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Support](#support)
+
+## Installation
+
+You can install **plotly-graph-image** via npm or yarn.
+
+### Using npm:
+```bash
 npm install plotly-graph-image
-Using yarn:
-bash
-Copy code
+```
+### Using yarn:
+```bash
 yarn add plotly-graph-image
-Usage
-Once installed, you can use plotly-graph-image to generate a PNG image from a Plotly figure.
+```
+## Usage
+Once installed, you can use `plotly-graph-image` to generate a PNG image from a Plotly figure.
 
-Basic Example
-Below is an example of how to use plotly-graph-image to create a PNG image of a Plotly chart and save it to your local filesystem.
+## Basic Example
+Below is an example of how to use `plotly-graph-image` to create a PNG image of a Plotly chart and save it to your local filesystem.
 
-javascript
-Copy code
+```javascript
 const { generatePlotlyImage } = require('plotly-graph-image');
 const fs = require('fs');
 
@@ -55,7 +56,7 @@ let figure = {
             "y": [10, 15, 13],
             "type": "scatter",
             "mode": "lines+markers",
-            "name": "TPM 24hr Avg",
+            "name": "Dataset A",
             "marker": {"color": "red"},
             "legendgroup": 3
         },
@@ -64,7 +65,7 @@ let figure = {
             "y": [12, 14, 10],
             "type": "scatter",
             "mode": "lines",
-            "name": "TPM (MOE CP AAQC)",
+            "name": "Dataset B",
             "marker": {"color": "blue"},
             "line": { "dash": "dot" },
             "legendgroup": 3
@@ -85,25 +86,26 @@ let imgOpts = {
 
 // Call the function to generate the image
 run(figure, imgOpts, 'graphFile');
-This example will save the generated image as graphFile.png in the current directory.
+```
+This example will save the generated image as `graphFile.png` in the current directory.
 
-API Documentation
-generatePlotlyImage(figure, imgOpts)
+## API Documentation
+`generatePlotlyImage(figure, imgOpts)`
 Generates a PNG image from a Plotly figure and options.
 
-Parameters:
+### Parameters:
 
-figure (Object): The Plotly figure object, which contains the data and layout for the chart.
-imgOpts (Object): Options for generating the image, including:
-width (Number): The width of the generated image (default: 1000).
-height (Number): The height of the generated image (default: 600).
-Returns:
+* `figure` (Object): The Plotly figure object, which contains the data and layout for the chart.
+* `imgOpts` (Object): Options for generating the image, including:
+    * `width` (Number): The width of the generated image (default: 1000).
+    * `height` (Number): The height of the generated image (default: 600).
+### Returns:
 
-A Promise that resolves to a Buffer containing the PNG image.
-Example Usage:
+* A Promise that resolves to a Buffer containing the PNG image.
 
-javascript
-Copy code
+### Example Usage:
+
+```javascript
 const { generatePlotlyImage } = require('plotly-graph-image');
 
 async function generateImage(figure) {
@@ -111,21 +113,21 @@ async function generateImage(figure) {
     const imageBuffer = await generatePlotlyImage(figure, imgOpts);
     // Do something with the imageBuffer (e.g., save it to a file)
 }
-Contributing
+```
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Write tests for any new functionality.
-Ensure all existing tests pass.
-Open a pull request.
-Please refer to the CONTRIBUTING.md for more detailed contribution guidelines.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Write tests for any new functionality.
+4. Ensure all existing tests pass.
+5. Open a pull request.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/lovechaudhary/plotly-graph-image/edit/main/LICENSE) file for details.
 
-Acknowledgements
-Puppeteer: Used for rendering the Plotly chart in a headless browser to capture the image.
-Plotly.js: The charting library that powers the generation of the visualizations.
-Support
-If you need help or have any questions, feel free to open an issue in the GitHub repository or reach out via [email/website/other means].
+## Acknowledgements
+* `Puppeteer`: Used for rendering the Plotly chart in a headless browser to capture the image.
+* `Plotly.js`: The charting library that powers the generation of the visualizations.
+## Support
+If you need help or have any questions, feel free to open an issue in the GitHub repository.
